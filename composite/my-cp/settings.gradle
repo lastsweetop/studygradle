@@ -1,0 +1,9 @@
+rootProject.name = 'my-cp'
+
+includeBuild '../my-app'
+includeBuild '../my-utils'
+includeBuild('../unpublished') {
+    dependencySubstitution {
+        substitute module('com.lastsweetop:date-utils') with project(':')
+    }
+}

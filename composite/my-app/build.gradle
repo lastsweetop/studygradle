@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+
+group 'com.lastsweetop'
+version '1.0'
+mainClassName='com.lastsweetop.myapp.Main'
+
+dependencies {
+    compile 'com.lastsweetop:string-utils:1.0'
+    compile 'com.lastsweetop:number-utils:1.0'
+    compile 'com.lastsweetop:date-utils:1.0'
+}
+
+repositories {
+    jcenter()
+}

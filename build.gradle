@@ -1,4 +1,10 @@
 
+
+task wrapper(type: Wrapper) {
+    gradleVersion '4.4'
+    distributionType 'all'
+}
+
 task compile {
     doLast {
         println 'compiling source'
@@ -20,6 +26,16 @@ task test(dependsOn: [compile,compileTest]) {
 task dist(dependsOn: [compile,test]) {
     doLast {
         println 'building the distribution'
+    }
+}
+
+task printProps {
+    doLast {
+        println aProp
+        println bProp
+        println System.properties['cProp']
+        println System.properties['dProp']
+        println eProp
     }
 }
 

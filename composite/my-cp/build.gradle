@@ -1,0 +1,11 @@
+task run {
+    dependsOn gradle.includedBuild('my-app').task(':run')
+    group 'application'
+}
+
+task clean {
+    dependsOn gradle.includedBuild('my-app').task(':clean'),
+            gradle.includedBuild('my-utils').task(':string-utils:clean'),
+            gradle.includedBuild('my-utils').task(':number-utils:clean')
+
+}

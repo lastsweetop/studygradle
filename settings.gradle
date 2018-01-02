@@ -1,2 +1,14 @@
-include 'subdir'
+rootProject.name='studygradle'
 
+include ':subdir',':tools:client',':tools:server'
+
+project(':tools:client').buildFileName='client.gradle'
+
+buildCache {
+    local(DirectoryBuildCache) {
+        directory = new File(rootDir, '.build-cache')
+        targetSizeInMB = 1024
+    }
+}
+
+org.gradle.caching.local.DirectoryBuildCache

@@ -1,0 +1,3 @@
+apply plugin: 'java'
+group 'com.lastsweetop'
+version '1.0'
